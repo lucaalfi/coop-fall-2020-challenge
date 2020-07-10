@@ -64,6 +64,7 @@ test('test bulk undo', () => {
   sourcer.add(3);
   sourcer.add(4);
   sourcer.add(5);
+  //sourcer.bulk_undo(2);
   sourcer.bulk_undo(3);
 
   expect(sourcer.value).toEqual(3);
@@ -128,5 +129,5 @@ test('test bulk redo overstep', () => {
   sourcer.undo();
   sourcer.bulk_redo(5);
 
-  expect(sourcer.value).toEqual(5);
+  expect(sourcer.value).toEqual(25);
 });
